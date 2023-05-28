@@ -1,0 +1,108 @@
+---
+env:
+  contexts:
+  - name: "http://wapp_test_c:8080"
+    urls:
+    - "http://wapp_test_c:8080"
+    includePaths:
+    - "http://wapp_test_c:8080.*"
+    excludePaths: []
+    authentication:
+      method: "form"
+      parameters:
+        loginPageUrl: "http://wapp_test_c:8080/login"
+        loginRequestUrl: "http://wapp_test_c:8080/login"
+        loginRequestBody: "username={%username%}&password={%password%}&_csrf=om-i8SlcpjmPQb-BYXaHBjwTQxXyZPx1Xqh_6BLlKd3Te93YxFmSlBltxAmiJN2xAFuzY1p3bnSRXcRYOJAeinGBHum1T-_p"
+      verification:
+        method: "response"
+        loggedInRegex: ".*<a class=\"nav-link\" href=\"/user/profile\">.*</a>.*"
+        pollFrequency: 60
+        pollUnits: "requests"
+        pollUrl: ""
+        pollPostData: ""
+    sessionManagement:
+      method: "cookie"
+      parameters: {}
+    technology:
+      exclude:
+      - "C"
+      - "ASP"
+      - "Apache"
+      - "IBM DB2"
+      - "SQLite"
+      - "PHP"
+      - "CouchDB"
+      - "Microsoft SQL Server"
+      - "Oracle"
+      - "Firebird"
+      - "MongoDB"
+      - "HypersonicSQL"
+      - "MySQL"
+      - "SAP MaxDB"
+      - "SVN"
+      - "Ruby"
+      - "IIS"
+      - "Microsoft Access"
+      - "Sybase"
+      - "Python"
+    users:
+    - name: "user 1"
+      credentials:
+        password: "ZAP"
+        username: "user 1"
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: true
+  vars: {}
+jobs:
+- parameters:
+    context: "http://wapp_test_c:8080"
+    user: "user 1"
+    policy: ""
+    maxRuleDurationInMins: 0
+    maxScanDurationInMins: 0
+  policyDefinition:
+    defaultStrength: "medium"
+    defaultThreshold: "medium"
+    rules: []
+  name: "activeScan"
+  type: "activeScan"
+- parameters:
+    template: "risk-confidence-html"
+    theme: "original"
+    reportDir: "C:\\Users\\Simon"
+    reportFile: ""
+    reportTitle: "ZAP Scanning Report"
+    reportDescription: ""
+    displayReport: false
+  risks:
+  - "info"
+  - "low"
+  - "medium"
+  - "high"
+  confidences:
+  - "falsepositive"
+  - "low"
+  - "medium"
+  - "high"
+  - "confirmed"
+  sections:
+  - "siteRiskCounts"
+  - "responseBody"
+  - "appendix"
+  - "alertTypes"
+  - "responseHeader"
+  - "alertTypeCounts"
+  - "riskConfidenceCounts"
+  - "alerts"
+  - "aboutThisReport"
+  - "contents"
+  - "requestBody"
+  - "reportDescription"
+  - "reportParameters"
+  - "requestHeader"
+  - "summaries"
+  name: "report"
+  type: "report"
+
