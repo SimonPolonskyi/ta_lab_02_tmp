@@ -6,7 +6,9 @@ env:
     - "http://wapp_test_c:8080"
     includePaths:
     - "http://wapp_test_c:8080.*"
-    excludePaths: []
+    excludePaths:
+    - "^https?://.*\\.(?:com|org|net).*$"
+    - "^http?://.*\\.(?:com|org|net).*$"
     authentication:
       method: "form"
       parameters:
@@ -71,7 +73,7 @@ jobs:
 - parameters:
     template: "risk-confidence-html"
     theme: "original"
-    reportDir: "C:\\Users\\Simon"
+    reportDir: "/zap/wrk/"
     reportFile: ""
     reportTitle: "ZAP Scanning Report"
     reportDescription: ""
