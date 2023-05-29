@@ -68,18 +68,6 @@ jobs:
   name: "spider"
   type: "spider"
 - parameters:
-    context: "http://wapptestc:8080"
-    user: "user 1"
-    policy: ""
-    maxRuleDurationInMins: 0
-    maxScanDurationInMins: 0
-  policyDefinition:
-    defaultStrength: "medium"
-    defaultThreshold: "medium"
-    rules: []
-  name: "activeScan"
-  type: "activeScan"
-- parameters:
     template: "risk-confidence-html"
     theme: "original"
     reportDir: "/zap/wrk/"
