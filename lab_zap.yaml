@@ -59,6 +59,15 @@ env:
   vars: {}
 jobs:
 - parameters:
+    context: "http://localhost:8080"
+    user: "user 1"
+    url: ""
+    maxDuration: 0
+    maxDepth: 0
+    maxChildren: 0
+  name: "spider"
+  type: "spider"
+- parameters:
     context: "http://wapp_test_c:8080"
     user: "user 1"
     policy: ""
