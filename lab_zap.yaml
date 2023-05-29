@@ -59,7 +59,7 @@ env:
   vars: {}
 jobs:
 - parameters:
-    context: "http://localhost:8080"
+    context: "http://wapp_test_c:8080"
     user: "user 1"
     url: ""
     maxDuration: 0
