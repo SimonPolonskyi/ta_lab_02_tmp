@@ -82,7 +82,7 @@ jobs:
 - parameters:
     template: "risk-confidence-html"
     theme: "original"
-    reportDir: "C:\\Users\\Simon"
+    reportDir: "/zap/wrk/"
     reportFile: ""
     reportTitle: "ZAP Scanning Report"
     reportDescription: ""
