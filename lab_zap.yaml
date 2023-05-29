@@ -1,19 +1,19 @@
 ---
 env:
   contexts:
-  - name: "http://wapp_test_c:8080"
+  - name: "http://wapptestc:8080"
     urls:
-    - "http://wapp_test_c:8080"
+    - "http://wapptestc:8080"
     includePaths:
-    - "http://wapp_test_c:8080.*"
+    - "http://wapptestc:8080.*"
     excludePaths:
     - "^https?://.*\\.(?:com|org|net).*$"
     - "^http?://.*\\.(?:com|org|net).*$"
     authentication:
       method: "form"
       parameters:
-        loginPageUrl: "http://wapp_test_c:8080/login"
-        loginRequestUrl: "http://wapp_test_c:8080/login"
+        loginPageUrl: "http://wapptestc:8080/login"
+        loginRequestUrl: "http://wapptestc:8080/login"
         loginRequestBody: "username={%username%}&password={%password%}&_csrf=om-i8SlcpjmPQb-BYXaHBjwTQxXyZPx1Xqh_6BLlKd3Te93YxFmSlBltxAmiJN2xAFuzY1p3bnSRXcRYOJAeinGBHum1T-_p"
       verification:
         method: "response"
@@ -59,7 +59,7 @@ env:
   vars: {}
 jobs:
 - parameters:
-    context: "http://wapp_test_c:8080"
+    context: "http://wapptestc:8080"
     user: "user 1"
     url: ""
     maxDuration: 0
@@ -68,7 +68,7 @@ jobs:
   name: "spider"
   type: "spider"
 - parameters:
-    context: "http://wapp_test_c:8080"
+    context: "http://wapptestc:8080"
     user: "user 1"
     policy: ""
     maxRuleDurationInMins: 0
@@ -82,7 +82,7 @@ jobs:
 - parameters:
     template: "risk-confidence-html"
     theme: "original"
-    reportDir: "/zap/wrk/"
+    reportDir: "C:\\Users\\Simon"
     reportFile: ""
     reportTitle: "ZAP Scanning Report"
     reportDescription: ""
